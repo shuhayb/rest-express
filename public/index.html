@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cloud Notes</title>
+    <link
+      rel="stylesheet"
+      href="notes.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://www.unpkg.com/github-markdown-css@4.0.0/github-markdown.css"
+    />
+  </head>
+  <body>
+    <div id="app" class="flex h-screen">
+      <aside class="text-gray-200 bg-black w-1/6 p-4 relative">
+        <ul id="notes">
+          <!-- to be filled in by js-->
+        </ul>
+        <button
+          id="add"
+          class="absolute bottom-0 right-0 m-4 bg-white hover:bg-yellow-400 p-4 rounded-full text-black"
+        >
+          Add
+        </button>
+      </aside>
+      <main id="input" class="pointer-events-none opacity-50 border-l border-black w-5/12 relative">
+        <input
+          id="title"
+          placeholder="filename"
+          class="bg-gray-400 p-1 w-full"
+        />
+        <textarea id="markdown" class="h-full w-full p-4"></textarea>
+        <button
+          id="save"
+          class="absolute bottom-0  right-0 m-4 bg-green-400 p-4 rounded-full text-white"
+        >
+          Save
+        </button>
+      </main>
+      <output
+        class="markdown-body border-l border-black w-5/12 p-4"
+        id="output"
+      ></output>
+    </main>
+    <script src="https://unpkg.com/marked@1.0.0/marked.min.js"></script>
+    <script type="module" src="./notes.js"></script>
+  </body>
+</html>
